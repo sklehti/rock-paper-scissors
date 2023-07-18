@@ -1,0 +1,125 @@
+body {
+  height: 100vh;
+  width: auto;
+  background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  color: #fff;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  font-family: "Ubuntu", sans-serif;
+}
+
+header {
+  border: 3px solid hsl(217, 16%, 45%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3vw;
+  border-radius: 1.5vw;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .main-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+} */
+
+.score-style {
+  /* height: 100%;
+  width: 20vw; */
+  background-color: #fff;
+  border-radius: 1.5vw;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 5vw;
+}
+
+.score-text {
+  color: hsl(229, 64%, 46%);
+  font-size: 2.5vw;
+  line-height: 2.4vw;
+  padding-bottom: 10px;
+}
+
+.score-amount {
+  color: hsl(229, 25%, 31%);
+  font-size: 9vw;
+  line-height: 7vw;
+}
+
+.pentagon-style {
+  height: 50vw;
+  width: 50vw;
+}
+
+.scissors-border,
+.paper-border {
+  width: 23vw;
+  height: 23vw;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+}
+.scissors-border {
+  margin-bottom: 0vw;
+  background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: 0px 4px 0px hsl(39, 91%, 37%);
+}
+.paper-border {
+  margin: 0 -55vw -32vw 0;
+  background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  box-shadow: 0px 4px 0px hsl(230, 48%, 49%);
+}
+
+#scissors,
+#paper {
+  width: 18vw;
+  height: 18vw;
+  background-color: #fff;
+  box-shadow: inset 0px 4px 0px rgba(159, 157, 157, 0.6);
+  margin-top: 2.5vw;
+  margin-left: 2.5vw;
+  border-radius: 50%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-img {
+  height: 10vw;
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    padding: 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .heading-style {
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}

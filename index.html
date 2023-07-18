@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -14,25 +13,46 @@
 
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-    Score Rules You Picked The House Picked You Win You Lose Play Again
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    <!-- <div class="main-section"> -->
+    <header>
+      <div class="heading-style">
+        <div role="heading">Rock</div>
+        <div role="heading">Paper</div>
+        <div role="heading">Scissors</div>
+        <div role="heading">Lizard</div>
+        <div role="heading">Spock</div>
+      </div>
+
+      <div class="score-style">
+        <div class="score-text">Score</div>
+        <div class="score-amount">12</div>
+      </div>
+    </header>
+
+    <main>
+      <div class="scissors-border">
+        <div id="scissors">
+          <img class="game-img" src="images/icon-scissors.svg" alt="scissors" />
+        </div>
+      </div>
+
+      <div class="paper-border">
+        <div id="paper">
+          <img class="game-img" src="images/icon-paper.svg" alt="paper" />
+        </div>
+      </div>
+
+      <img class="pentagon-style" src="images/bg-pentagon.svg" alt="pentagon" />
+    </main>
+    <!-- </div> -->
+
+    <footer><button>Rules</button></footer>
   </body>
 </html>
+
+<!--  Rules You Picked The House Picked You Win You Lose Play Again
+ -->
