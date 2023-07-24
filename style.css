@@ -20,10 +20,165 @@ header {
   border-radius: 1.5vw;
 }
 
-main {
+.rules-visibility {
+  display: none;
+}
+
+.rules-layout {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.rules-style {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 10;
+  text-align: center;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  border-radius: 20px;
+}
+
+.rules-title {
+  color: #000;
+}
+
+#rules-button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+}
+
+.first-view-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.first-view-unvisible {
+  display: none;
+}
+
+.selected-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@keyframes grow-1 {
+  /* from {
+    background-color: hsl(214, 47%, 23%);
+  } */
+  to {
+    background: hsl(213, 37%, 24%, 1);
+  }
+}
+@keyframes grow-2 {
+  /* from {
+    background-color: hsl(214, 47%, 23%);
+  } */
+  to {
+    background: hsl(211, 34%, 27%, 0.9);
+  }
+}
+@keyframes grow-3 {
+  /* from {
+    background-color: hsl(214, 47%, 23%);
+  } */
+  to {
+    background: hsl(212, 35%, 22%, 0.9);
+  }
+}
+
+.win-div-1 {
+  padding: 5vw;
+}
+.win-div-2 {
+  padding: 5vw;
+}
+.win-div-3 {
+  padding: 4vw;
+}
+
+.win-img-layout {
+  margin-left: -14vw;
+}
+
+.house-win-img-layout {
+  margin-left: 8vw;
+}
+
+.icon-and-text {
+  align-items: center;
+}
+
+.win-style-1 {
+  border-radius: 50%;
+  animation: grow-1 infinite;
+  animation-duration: 2s;
+  animation-delay: 2500ms;
+}
+.win-style-2 {
+  border-radius: 50%;
+  animation: grow-2 infinite;
+  animation-duration: 2s;
+  animation-delay: 2500ms;
+}
+.win-style-3 {
+  border-radius: 50%;
+  animation: grow-3 infinite;
+  animation-duration: 2s;
+  animation-delay: 2500ms;
+}
+
+.second-view-unvisible {
+  display: none;
+}
+
+.second-view-titles {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.you-title {
+  margin-left: 4vw;
+  margin-top: -8.5vw;
+}
+
+.house-title {
+  margin-left: 1vw;
+  margin-top: -8.5vw;
+}
+
+.play-again-layout {
+  text-align: center;
+}
+
+#play-again-btn {
+  background-color: #fff;
+  padding: 12px 50px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid #fff;
+  color: hsl(237, 49%, 15%);
+  border-radius: 2vw;
+  margin-bottom: 10vw;
+}
+
+.play-again-layout {
+  visibility: hidden;
 }
 
 /* .main-section {
@@ -138,6 +293,68 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#selected-scissors,
+#selected-paper,
+#selected-spock,
+#selected-lizard,
+#selected-rock {
+  width: 25vw;
+  height: 25vw;
+  /* max-width: 110px;
+  max-height: 110px; */
+  background-color: #fff;
+  box-shadow: inset 0px 4px 0px rgba(159, 157, 157, 0.6);
+  /* margin-top: 5px;
+  margin-left: 5px; */
+  border-radius: 50%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selected-scissors-border {
+  background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: 0px 4px 0px hsl(39, 91%, 37%);
+  border-radius: 50%;
+  padding: 3vw;
+}
+.selected-paper-border {
+  background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  box-shadow: 0px 4px 0px hsl(230, 48%, 49%);
+  border-radius: 50%;
+  padding: 3vw;
+}
+.selected-spock-border {
+  background: radial-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+  box-shadow: 0px 4px 0px hsl(189, 54%, 36%);
+  border-radius: 50%;
+  padding: 3vw;
+}
+.selected-lizard-border {
+  background: radial-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  box-shadow: 0px 4px 0px hsl(261, 51%, 42%);
+  border-radius: 50%;
+  padding: 3vw;
+}
+.selected-rock-border {
+  background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  box-shadow: 0px 4px 0px hsl(349, 64%, 33%);
+  border-radius: 50%;
+  padding: 3vw;
+}
+
+.house-picked {
+  content: "";
+  background-color: hsl(215, 69%, 14%);
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
+}
+
+.house-picked-icon-unvisible {
+  display: none;
 }
 
 .game-img {
