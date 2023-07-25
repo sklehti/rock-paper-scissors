@@ -64,7 +64,7 @@ function twoSelectedValues(value) {
       </div>
 
         <div id="house-picked" class="house-picked">
-          <div id="house-picked-icon" class="selected-${housePicked}-border">
+          <div id="house-picked-icon" class="selected-${housePicked}-border win-opacity">
             <div id="selected-${housePicked}" >
                 <img class="game-img" src="images/icon-${housePicked}.svg" alt="rock" />
             </div>
@@ -73,8 +73,8 @@ function twoSelectedValues(value) {
     </div>
     
     <div class="selected-icons">
-      <p class="second-view-titles">You picked</p>
-      <p class="second-view-titles">The house picked</p>
+      <p class="second-view-titles you-title-tie">You picked</p>
+      <p class="second-view-titles house-title-tie">The house picked</p>
     </div>
     `;
 
@@ -144,7 +144,7 @@ function showRules() {
   const allRules = `
   <div id="rules-div" class="rules-style" >
     <h2 class="rules-title">Rules</h2>
-     <img alt="rules" src="images/image-rules-bonus.svg"/>
+     <img class="rules-padding" alt="rules" src="images/image-rules-bonus.svg"/>
     <button id="rules-button">
       <img  alt="close button" src="images/icon-close.svg" onClick="closeRules()"/>
     </button>
@@ -179,7 +179,7 @@ function youWin(value, housePicked) {
       
 
         <div id="house-picked" class="house-picked">
-          <div id="house-picked-icon" class="selected-${housePicked}-border">
+          <div id="house-picked-icon" class="selected-${housePicked}-border win-opacity">
             <div id="selected-${housePicked}" >
                 <img class="game-img" src="images/icon-${housePicked}.svg" alt="rock" />
             </div>
@@ -215,7 +215,7 @@ function houseWin(value, housePicked) {
         <div class="win-div-2 win-style-2" >
         <div class="win-div-3 win-style-3" >
         <div id="house-picked" class="house-picked">
-          <div id="house-picked-icon" class="selected-${housePicked}-border">
+          <div id="house-picked-icon" class="selected-${housePicked}-border win-opacity">
             <div id="selected-${housePicked}" >
                 <img class="game-img" src="images/icon-${housePicked}.svg" alt="rock" />
             </div>
