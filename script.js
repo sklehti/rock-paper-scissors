@@ -1,18 +1,28 @@
 const firstView = document.getElementById("first-view");
 const secondView = document.getElementById("second-view");
 const selectedValues = document.getElementById("selected-values");
-const playAgainBtn = document.getElementById("play-again-layout");
 const scissors = document.getElementById("scissors");
 const paper = document.getElementById("paper");
 const rock = document.getElementById("rock");
 const lizard = document.getElementById("lizard");
 const spock = document.getElementById("spock");
-const gameEnded = document.getElementById("game-ended");
 const scoreAmount = document.getElementById("score-amount");
 const rules = document.getElementById("rules");
 const youPicked = document.getElementById("you-picked");
 
 const allIcons = ["scissors", "paper", "rock", "lizard", "spock"];
+
+const gameEndedView = `
+  <div id="play-again-layout" class="play-again-layout">
+    <h2 id="game-ended"></h2>
+    <button id="play-again-btn" class="play-again-btn">Play again</button>
+  </div>
+`;
+
+document.getElementById("mobile-view").innerHTML = gameEndedView;
+
+const playAgainBtn = document.getElementById("play-again-layout");
+const gameEnded = document.getElementById("game-ended");
 
 scoreAmount.innerHTML = localStorage.getItem(scoreAmount);
 
@@ -49,20 +59,24 @@ playAgainBtn.addEventListener("click", function () {
 function twoSelectedValues(value) {
   const housePicked = selectRandomIcon();
 
-  // playGame(value, housePicked);
-
   const selectedValuesHtml = `
     <div id="you-picked" class="selected-icons">
-    
-        
-          <div class="selected-${value}-border">
-              <div id="selected-${value}" >
-                  <img class="game-img" src="images/icon-${value}.svg" alt="rock" />
-              </div>
-           
-      
+      <div class="img-space"> 
+        <div class="selected-${value}-border">
+            <div id="selected-${value}" >
+                <img class="game-img" src="images/icon-${value}.svg" alt="rock" />
+            </div> 
+        </div>
       </div>
 
+      <div id="desktop-view">
+        <div id="play-again-layout-2" class="play-again-layout-2">
+          <h2 id="game-ended-2"></h2>
+          <button id="play-again-btn-2" class="play-again-btn-2" onClick="playAgain()" >Play again</button>
+        </div>
+      </div>
+
+      <div class="img-space"> 
         <div id="house-picked" class="house-picked">
           <div id="house-picked-icon" class="selected-${housePicked}-border win-opacity">
             <div id="selected-${housePicked}" >
@@ -70,15 +84,23 @@ function twoSelectedValues(value) {
             </div>
           </div>         
         </div>
+      </div>
     </div>
     
-    <div class="selected-icons">
+    <div class="selected-icons selected-icons-desktop">
       <p class="second-view-titles you-title-tie">You picked</p>
       <p class="second-view-titles house-title-tie">The house picked</p>
     </div>
     `;
 
   selectedValues.innerHTML = selectedValuesHtml;
+
+  setTimeout(() => {
+    document
+      .getElementById("play-again-layout-2")
+      .classList.remove("play-again-layout-2");
+    document.getElementById("game-ended-2").innerHTML = "Tie";
+  }, 2000);
 
   playGame(value, housePicked);
 
@@ -140,14 +162,24 @@ function playGame(youValue, houseValue) {
 function showRules() {
   rules.classList.remove("rules-visibility");
   rules.classList.add("rules-layout");
+  rules.classList.add("modal");
 
   const allRules = `
-  <div id="rules-div" class="rules-style" >
-    <h2 class="rules-title">Rules</h2>
-     <img class="rules-padding" alt="rules" src="images/image-rules-bonus.svg"/>
-    <button id="rules-button">
-      <img  alt="close button" src="images/icon-close.svg" onClick="closeRules()"/>
-    </button>
+  <div class="modal-div" >
+    <div class="modal" >
+      <div id="rules-div" class="rules-style" >
+        <div class="modal-title">
+          <h2 class="modal-rules-title">Rules</h2>
+          <button class="rules-button-modal" >
+          <img  alt="close button" src="images/icon-close.svg" onClick="closeRules()"/>
+          </button>
+      </div>
+      <h2 class="rules-title">Rules</h2>
+      <img class="rules-padding" alt="rules" src="images/image-rules-bonus.svg"/>
+      <button id="rules-button" class="rules-button-modal" >
+        <img id="close-button"  alt="close button" src="images/icon-close.svg" onClick="closeRules()"/>
+      </button>
+    </div>
   </div>
   `;
 
@@ -157,27 +189,37 @@ function showRules() {
 function closeRules() {
   rules.classList.remove("rules-layout");
   rules.classList.add("rules-visibility");
+
+  rules.classList.remove("modal");
 }
 
 function youWin(value, housePicked) {
   const selectedValuesHtml = `
     <div id="you-picked" class="selected-icons">
-    <div class="win-img-layout">
-      <div class=" win-div-1 win-style-1">
-        <div class="win-div-2 win-style-2" >
-        <div class="win-div-3 win-style-3" >
-        
-          <div class="selected-${value}-border">
-              <div id="selected-${value}" >
-                  <img class="game-img" src="images/icon-${value}.svg" alt="rock" />
+      <div class="img-space"> 
+        <div class="win-img-layout">
+          <div class=" win-div-1 win-style-1">
+            <div class="win-div-2 win-style-2" >
+              <div class="win-div-3 win-style-3" >
+                <div class="selected-${value}-border">
+                  <div id="selected-${value}" >
+                      <img class="game-img" src="images/icon-${value}.svg" alt="rock" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          </div>
         </div>
       </div>
-      
 
+      <div id="desktop-view">
+        <div id="play-again-layout-2" class="play-again-layout-2">
+          <h2 id="game-ended-2"></h2>
+          <button id="play-again-btn-2" class="play-again-btn-2" onClick="playAgain()" >Play again</button>
+        </div>
+      </div>
+
+      <div class="img-space"> 
         <div id="house-picked" class="house-picked">
           <div id="house-picked-icon" class="selected-${housePicked}-border win-opacity">
             <div id="selected-${housePicked}" >
@@ -185,54 +227,86 @@ function youWin(value, housePicked) {
             </div>
           </div>         
         </div>
+      </div>
     </div>
     
-    <div class="selected-icons">
+    <div class="selected-icons selected-icons-desktop">
       <p class="second-view-titles you-title">You picked</p>
       <p class="second-view-titles house-title">The house picked</p>
     </div>
     `;
 
   selectedValues.innerHTML = selectedValuesHtml;
+
+  setTimeout(() => {
+    document
+      .getElementById("play-again-layout-2")
+      .classList.remove("play-again-layout-2");
+    document.getElementById("game-ended-2").innerHTML = "You win";
+  }, 2000);
 }
 
-// TODO vaihda toisin päin!!
-function houseWin(value, housePicked) {
+async function houseWin(value, housePicked) {
   const selectedValuesHtml = `
-    <div id="you-picked" class="selected-icons">
-    
-        
-          <div class="selected-${value}-border">
-              <div id="selected-${value}" >
-                  <img class="game-img" src="images/icon-${value}.svg" alt="rock" />
-              </div>
-            </div>
-          
-
-        
-        <div class="house-win-img-layout">
-      <div class=" win-div-1 win-style-1">
-        <div class="win-div-2 win-style-2" >
-        <div class="win-div-3 win-style-3" >
-        <div id="house-picked" class="house-picked">
-          <div id="house-picked-icon" class="selected-${housePicked}-border win-opacity">
-            <div id="selected-${housePicked}" >
-                <img class="game-img" src="images/icon-${housePicked}.svg" alt="rock" />
-            </div>
-          </div>         
-        </div>
-        </div>
+    <div id="you-picked" class="selected-icons"> 
+      <div class="img-space">    
+        <div class="selected-${value}-border">
+          <div id="selected-${value}" >
+              <img class="game-img" src="images/icon-${value}.svg" alt="rock" />
           </div>
         </div>
       </div>
 
+      <div id="desktop-view">
+        <div id="play-again-layout-2" class="play-again-layout-2">
+          <h2 id="game-ended-2"></h2>
+          <button id="play-again-btn-2" class="play-again-btn-2" onClick="playAgain()">Play again</button>
+        </div>
+      </div>
+      
+      <div class="img-space">  
+        <div class="house-win-img-layout">
+          <div class=" win-div-1 win-style-1">
+            <div class="win-div-2 win-style-2" >
+              <div class="win-div-3 win-style-3" >
+                <div id="house-picked" class="house-picked">
+                  <div id="house-picked-icon" class="selected-${housePicked}-border win-opacity">
+                    <div id="selected-${housePicked}" >
+                        <img class="game-img" src="images/icon-${housePicked}.svg" alt="rock" />
+                    </div>
+                  </div>         
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     
-     <div class="selected-icons">
-       <p class="second-view-titles you-title">You picked</p>
-       <p class="second-view-titles house-title">The house picked</p>
-     </div>
+    <div class="selected-icons selected-icons-desktop">
+      <p class="second-view-titles you-title">You picked</p>
+      <p class="second-view-titles house-title">The house picked</p>
+    </div>
     `;
 
   selectedValues.innerHTML = selectedValuesHtml;
+
+  setTimeout(() => {
+    document
+      .getElementById("play-again-layout-2")
+      .classList.remove("play-again-layout-2");
+    document.getElementById("game-ended-2").innerHTML = "House win";
+  }, 2000);
+}
+
+function playAgain() {
+  document
+    .getElementById("play-again-layout-2")
+    .addEventListener("click", function () {
+      firstView.classList.remove("first-view-unvisible");
+      secondView.classList.add("second-view-unvisible");
+      document
+        .getElementById("play-again-layout-2")
+        .classList.add("play-again-layout-2");
+    });
 }

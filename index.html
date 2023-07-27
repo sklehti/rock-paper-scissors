@@ -18,77 +18,81 @@
 
   <body>
     <div id="rules" class="rules-visibility"></div>
-    <header>
-      <div class="heading-style">
-        <div role="heading">Rock</div>
-        <div role="heading">Paper</div>
-        <div role="heading">Scissors</div>
-        <div role="heading">Lizard</div>
-        <div role="heading">Spock</div>
-      </div>
 
-      <div class="score-style">
-        <div class="score-text">Score</div>
-        <div id="score-amount" class="score-amount">0</div>
-      </div>
-    </header>
+    <div class="laptop-layout">
+      <header>
+        <div class="heading-style">
+          <div role="heading">Rock</div>
+          <div role="heading">Paper</div>
+          <div role="heading">Scissors</div>
+          <div role="heading">Lizard</div>
+          <div role="heading">Spock</div>
+        </div>
 
-    <main>
-      <div id="first-view" class="first-view-visible">
-        <div class="scissors-border">
-          <div id="scissors">
-            <img
-              class="game-img"
-              src="images/icon-scissors.svg"
-              alt="scissors"
-            />
+        <div class="score-style">
+          <div class="score-text">Score</div>
+          <div id="score-amount" class="score-amount">0</div>
+        </div>
+      </header>
+
+      <main>
+        <div id="first-view" class="first-view-visible">
+          <div class="scissors-border">
+            <div id="scissors">
+              <img
+                class="game-img"
+                src="images/icon-scissors.svg"
+                alt="scissors"
+              />
+            </div>
+          </div>
+
+          <div class="spack-paper-layout">
+            <div class="spock-border">
+              <div id="spock">
+                <img class="game-img" src="images/icon-spock.svg" alt="spock" />
+              </div>
+            </div>
+
+            <div class="paper-border">
+              <div id="paper">
+                <img class="game-img" src="images/icon-paper.svg" alt="paper" />
+              </div>
+            </div>
+          </div>
+
+          <img
+            class="pentagon-style"
+            src="images/bg-pentagon.svg"
+            alt="pentagon"
+          />
+          <div class="lizard-rock-layout">
+            <div class="lizard-border">
+              <div id="lizard">
+                <img
+                  class="game-img"
+                  src="images/icon-lizard.svg"
+                  alt="lizard"
+                />
+              </div>
+            </div>
+
+            <div class="rock-border">
+              <div id="rock">
+                <img class="game-img" src="images/icon-rock.svg" alt="rock" />
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="spack-paper-layout">
-          <div class="spock-border">
-            <div id="spock">
-              <img class="game-img" src="images/icon-spock.svg" alt="spock" />
-            </div>
-          </div>
-
-          <div class="paper-border">
-            <div id="paper">
-              <img class="game-img" src="images/icon-paper.svg" alt="paper" />
-            </div>
-          </div>
+        <div id="second-view" class="second-view-unvisible">
+          <div id="selected-values"></div>
         </div>
-
-        <img
-          class="pentagon-style"
-          src="images/bg-pentagon.svg"
-          alt="pentagon"
-        />
-        <div class="lizard-rock-layout">
-          <div class="lizard-border">
-            <div id="lizard">
-              <img class="game-img" src="images/icon-lizard.svg" alt="lizard" />
-            </div>
-          </div>
-
-          <div class="rock-border">
-            <div id="rock">
-              <img class="game-img" src="images/icon-rock.svg" alt="rock" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="second-view" class="second-view-unvisible">
-        <div id="selected-values"></div>
-      </div>
-    </main>
+      </main>
+    </div>
 
     <footer>
-      <div id="play-again-layout" class="play-again-layout">
-        <h2 id="game-ended"></h2>
-        <button id="play-again-btn" class="play-again-btn">Play again</button>
-      </div>
+      <div id="mobile-view"></div>
 
       <button id="rules-btn" onclick="showRules()">Rules</button>
     </footer>
@@ -96,6 +100,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
-<!--  Rules You Picked The House Picked You Win You Lose Play Again
- -->
