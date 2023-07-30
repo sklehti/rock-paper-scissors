@@ -24,7 +24,10 @@ document.getElementById("mobile-view").innerHTML = gameEndedView;
 const playAgainBtn = document.getElementById("play-again-layout");
 const gameEnded = document.getElementById("game-ended");
 
-scoreAmount.innerHTML = localStorage.getItem(scoreAmount);
+localStorage.getItem(scoreAmount) !== null
+  ? (scoreAmount.innerHTML = localStorage.getItem(scoreAmount))
+  : ((scoreAmount.innerHTML = Number(0)),
+    localStorage.setItem(scoreAmount, scoreAmount.innerHTML));
 
 function handleSelectedIcon(icon) {
   firstView.classList.add("first-view-unvisible");
