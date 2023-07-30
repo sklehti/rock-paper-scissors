@@ -655,6 +655,12 @@ button#rules-button.rules-button-modal:hover > img {
     padding: 10px 40px;
   }
 
+  .rules-btn-div {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+
   .modal-title {
     display: flex;
     flex-direction: row;
