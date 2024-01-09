@@ -16,6 +16,11 @@ Users should be able to:
 - Play Rock, Paper, Scissors, Lizard, Spock against the computer
 - Maintain the state of the score after refreshing the browser
 
+# To run locally
+
+- copy index.html path
+- open this path in browser
+
 ### Screenshot
 
 Mobile view:
